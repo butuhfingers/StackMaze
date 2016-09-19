@@ -5,7 +5,7 @@ public class Driver {
     //The main driver of the program
     public static void main(String args[]){
         //Create the stack
-        Stack stack = new Stack<Coordinate>();
+        Stack stack = new Stack<Coordinate>(1);
 
         //Add the elements
         stack.push(new Coordinate(0, 0));

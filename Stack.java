@@ -30,9 +30,10 @@ public class Stack<E> implements iStack<E> {
     //Push an element onto the top
     public void push(E element) {
         //Is the stack too large?
-        if(topPos > size){  //The stack is too full, we must create another
-            //Create a new stack
-            System.out.println("Creating the new stack...");
+        if(topPos + 1 >= size){  //The stack is too full, we must create another
+            //Create a temporary new stack
+            data = replaceStack(data, data.length + size);
+            System.out.println("Created new stack with size: " + data.length);
         }
 
         data[++topPos] = element;
@@ -53,10 +54,22 @@ public class Stack<E> implements iStack<E> {
     public String toString(){
         //Loop through the stack and print each element
         String string = "";
-        for(int i = 0;i < topPos+ 1;i++){
+        for(int i = 0;i < topPos + 1;i++){
             string += data[i].toString() + "\n";
         }
 
         return string;
+    }
+
+    //Create a stack and import all elements into it
+    private E[] replaceStack(E[] oldStack, int size){
+        E[] tempData = (E[]) new Object[size];
+
+        //Transfer the elements of the old stack to the new
+        for(int i = 0;i < oldStack.length;i++){
+            tempData[i] = oldStack[i];
+        }
+
+        return tempData;
     }
 }
