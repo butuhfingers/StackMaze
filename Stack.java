@@ -40,13 +40,13 @@ public class Stack<E> implements iStack<E> {
         System.out.println("Pushed: " + element);
     }
     //Remove the top element
-    public E pop() throws EmptyStackExcpetion {
+    public E pop() {
         //Check if there is an element to pop
         if(topPos > -1) {
             System.out.println("Popped: " + data[topPos].toString());
             return data[--topPos];
-        }else {   //No element to pop, throw exception
-            throw new EmptyStackExcpetion();
+        }else {   //Return null that there is nothing left
+            return null;
         }
     }
 

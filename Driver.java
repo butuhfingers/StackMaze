@@ -16,11 +16,7 @@ public class Driver {
         System.out.print(stack.toString());
 
         //Pop the top element
-        try {
-            stack.pop();
-        }catch(EmptyStackExcpetion ese){
-            System.out.println("Exception: " + ese.getMessage());
-        }
+        stack.pop();
 
         //Show the stack
         System.out.print(stack.toString());

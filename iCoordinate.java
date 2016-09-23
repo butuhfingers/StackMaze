@@ -7,8 +7,8 @@ public interface iCoordinate {
 //    public void setX(int x);
 
     //Returns
-    public int getY();
-    public int getX();
+    public int getCol();
+    public int getRow();
 
     public String toString();
 }

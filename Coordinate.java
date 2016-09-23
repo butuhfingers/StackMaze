@@ -3,36 +3,43 @@
  */
 public class Coordinate implements iCoordinate {
     //Variables
-    private int x = 0;
-    private int y = 0;
+    private int row = 0;
+    private int column = 0;
 
     //Constructor
-    public Coordinate(int x, int y) {
-        setY(y);
-        setX(x);
+    public Coordinate(int row, int column) {
+        setCol(column);
+        setRow(row);
     }
 
     //Properties
     //Set our Y position
-    private void setY(int y) {
-        this.y = y;
+    private void setCol(int column) {
+        this.column = column;
     }
-    //Set our x position
-    private void setX(int x) {
-        this.x = x;
+    //Set our row position
+    private void setRow(int row) {
+        this.row = row;
     }
 
-    //Return our y position
-    public int getY() {
-        return this.y;
+    //Return our column position
+    public int getCol() {
+        return this.column;
     }
-    //Return our x position
-    public int getX() {
-        return this.x;
+    //Return our row position
+    public int getRow() {
+        return this.row;
     }
 
     @Override
     public String toString() {
-        return "[X:" + getX() + ",Y:" + getY() + "]";
+        return "[Row:" + getRow() + ",Column:" + getCol() + "]";
+    }
+
+    public boolean isEqual(Coordinate p){
+        if(this.column == p.getRow() && this.row == p.getRow())
+            return true;
+
+        return false;
     }
 }
